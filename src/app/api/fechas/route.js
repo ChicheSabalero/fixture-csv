@@ -18,6 +18,7 @@ export async function GET(request) {
   const filePath = path.join(
     process.cwd(),
     "public",
+    "fechas",
     `Fecha${selectedFecha}.csv`
   );
 

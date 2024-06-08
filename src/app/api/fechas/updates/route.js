@@ -10,7 +10,12 @@ export async function POST(request) {
       return new NextResponse("Invalid data format", { status: 400 });
     }
 
-    const filePath = path.join(process.cwd(), "public", `Fecha${fecha}.csv`);
+    const filePath = path.join(
+      process.cwd(),
+      "public",
+      "fechas",
+      `Fecha${fecha}.csv`
+    );
 
     const csvContent = [
       [

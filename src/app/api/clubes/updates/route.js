@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
-// Función para parsear el contenido del archivo CSV
 const parseCSV = (fileContents) => {
   const [headerLine, ...lines] = fileContents.split("\n");
   const headers = headerLine.split(",");
@@ -15,7 +14,6 @@ const parseCSV = (fileContents) => {
   });
 };
 
-// Función para convertir datos en formato CSV
 const convertToCSV = (data) => {
   const headers = Object.keys(data[0]);
   const csvLines = data.map((row) =>
@@ -24,7 +22,6 @@ const convertToCSV = (data) => {
   return [headers.join(","), ...csvLines].join("\n");
 };
 
-// Función para actualizar los datos de los clubes con los resultados de una fecha
 const updateClubesData = (clubesData, fechaData) => {
   fechaData.forEach(({ Local, Visitante, GolL, GolV }) => {
     const localClub = clubesData.find((club) => club.Equipo === Local);
@@ -77,6 +74,7 @@ export async function POST(request) {
     const fechaFilePath = path.join(
       process.cwd(),
       "public",
+      "fechas",
       `Fecha${fechaStr}.csv`
     );
     const fechaFileContents = fs.readFileSync(fechaFilePath, "utf8");

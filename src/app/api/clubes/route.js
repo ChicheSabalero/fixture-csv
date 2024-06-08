@@ -1,24 +1,45 @@
 import fs from "fs";
 import path from "path";
-import Papa from "papaparse";
+import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const clubes = path.join(process.cwd(), "public", "Clubes.csv");
-  const file = fs.readFileSync(clubes, "utf8");
+  const { searchParams } = new URL(request.url);
+  const selectedZona = searchParams.get("zona");
+  const selectedFecha = searchParams.get("fecha");
 
-  return new Promise((resolve, reject) => {
-    Papa.parse(file, {
-      header: true,
-      complete: (results) => {
-        resolve(new Response(JSON.stringify(results.data), { status: 200 }));
-      },
-      error: (error) => {
-        reject(
-          new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-          })
-        );
-      },
-    });
+  if (!selectedZona || !selectedFecha) {
+    return NextResponse.json(
+      { error: "Zona o Fecha no proporcionada" },
+      { status: 400 }
+    );
+  }
+
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "clubes",
+    `Clubes${selectedFecha}.csv`
+  );
+
+  try {
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const data = parseCSV(fileContents).filter(
+      (club) => club.Zona === selectedZona
+    );
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error("Error reading CSV:", error);
+    return NextResponse.json(
+      { error: "Error leyendo el archivo CSV" },
+      { status: 500 }
+    );
+  }
+}
+
+function parseCSV(fileContents) {
+  return fileContents.split("\n").map((line) => {
+    const [key, Id, Equipo, Zona, puntos, PJ, PG, PE, PP, GF, GC, DG] =
+      line.split(",");
+    return { key, Id, Equipo, Zona, puntos, PJ, PG, PE, PP, GF, GC, DG };
   });
 }

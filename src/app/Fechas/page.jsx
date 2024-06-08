@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function CsvDisplay() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedFecha, setSelectedFecha] = useState("01"); // Valor por defecto: '01'
+  const [selectedFecha, setSelectedFecha] = useState("01");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,7 +42,7 @@ export default function CsvDisplay() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ fecha: selectedFecha, data }), // Incluyendo `fecha` y `data`
+        body: JSON.stringify({ fecha: selectedFecha, data }),
       });
 
       if (response.ok) {
@@ -120,7 +120,7 @@ export default function CsvDisplay() {
           ))}
         </tbody>
       </table>
-      <button onClick={handleSave}>Guardar</button>
+      <button onClick={handleSave}>ACTUALIZAR</button>
     </div>
   );
 }
