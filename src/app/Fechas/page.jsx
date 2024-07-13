@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function CsvDisplay() {
+export default function FechasPage() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedFecha, setSelectedFecha] = useState("01");
@@ -35,6 +35,27 @@ export default function CsvDisplay() {
     setData(newData);
   };
 
+  const updateClubes = async () => {
+    try {
+      const response = await fetch("/api/clubes/updates", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ fecha: selectedFecha }),
+      });
+
+      if (response.ok) {
+        console.log("Datos guardados exitosamente");
+      } else {
+        const result = await response.json();
+        console.log(`Error al guardar los datos: ${result.error}`);
+      }
+    } catch (error) {
+      console.error("Error saving data:", error);      
+    }
+  };
+
   const handleSave = async () => {
     try {
       const response = await fetch("/api/fechas/updates", {
@@ -55,6 +76,8 @@ export default function CsvDisplay() {
       console.error("Error saving data:", error);
       alert("Error al guardar los datos");
     }
+
+    updateClubes();
   };
 
   if (loading) {
@@ -63,7 +86,7 @@ export default function CsvDisplay() {
 
   return (
     <div>
-      <h1>CSV Data</h1>
+      <h1>FECHAS</h1>
       <label htmlFor="fecha-select">Seleccionar Fecha:</label>
       <select
         id="fecha-select"
@@ -120,7 +143,7 @@ export default function CsvDisplay() {
           ))}
         </tbody>
       </table>
-      <button onClick={handleSave}>ACTUALIZAR</button>
+      <button onClick={handleSave}>UPDATE</button>
     </div>
   );
 }

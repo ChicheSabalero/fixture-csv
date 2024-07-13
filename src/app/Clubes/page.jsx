@@ -34,13 +34,35 @@ export default function ClubesPage() {
     setSelectedFecha(event.target.value);
   };
 
+  const handleSave = async () => {
+    try {
+      const response = await fetch("/api/clubes/updates", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ clubes: selectedZona, data }), //clubes??
+      });
+
+      if (response.ok) {
+        alert("Datos guardados exitosamente");
+      } else {
+        const result = await response.json();
+        alert(`Error al guardar los datos: ${result.error}`);
+      }
+    } catch (error) {
+      console.error("Error saving data:", error);
+      alert("Error al guardar los datos");
+    }
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
 
   return (
     <div>
-      <h1>Club Data</h1>
+      <h1>POSICIONES</h1>
       <label htmlFor="zona-select">Seleccionar Zona:</label>
       <select id="zona-select" value={selectedZona} onChange={handleZonaChange}>
         <option value="A">Zona A</option>
@@ -90,6 +112,7 @@ export default function ClubesPage() {
           ))}
         </tbody>
       </table>
+      <button onClick={handleSave}>UPDATE</button>
     </div>
   );
 }

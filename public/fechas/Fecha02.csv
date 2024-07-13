@@ -1,20 +1,20 @@
 Partido,Fecha,ZonaL,Local,GolL,GolV,Visitante,ZonaV
-1,02,A,Racing (C),0,0,Agropecuario,A
-2,02,A,Patronato,0,0,All Boys,A
-3,02,A,Quilmes,0,0,Talleres (RdE),A
-4,02,A,San Miguel,0,0,Estudiantes (BA),A
+1,02,A,Racing (C),0,1,Agropecuario,A
+2,02,A,Patronato,2,2,All Boys,A
+3,02,A,Quilmes,1,1,Talleres (RdE),A
+4,02,A,San Miguel,2,3,Estudiantes (BA),A
 5,02,A,Ferro,0,0,Chacarita,A
-6,02,A,Dep. Maipu,0,0,San Martin (T),A
-7,02,A,Gimnasia (J),0,0,Arsenal,A
+6,02,A,Dep. Maipu,6,4,San Martin (T),A
+7,02,A,Gimnasia (J),1,0,Arsenal,A
 8,02,A,Guemes (SdE),0,0,San Martin (SJ),A
 9,02,A,Alvarado,0,0,Brown (PM),A
 10,02,B,Brown (A),0,0,Temperley,B
-11,02,B,Almagro,0,0,Dep. Moron,B
+11,02,B,Almagro,-3,0,Dep. Moron,B
 12,02,B,Def. de Belgrano,0,0,Nueva Chicago,B
 13,02,B,Chaco For Ever,0,0,Gimnasia (M),B
 14,02,B,San Telmo,0,0,Gimnasia (S),B
 15,02,B,Atl Rafaela,0,0,Mitre (SdE),B
 16,02,B,Dep. Madryn,0,0,Aldosivi,B
 17,02,B,Def. Unidos,0,0,Estudiantes (RC),B
-18,02,B,Atlanta,0,1,Colon,B
-19,02,B,Alte Brown,0,0,Tristan Suarez,A
+18,02,B,Atlanta,1,1,Colon,B
+19,02,B,Alte Brown,1,1,Tristan Suarez,A

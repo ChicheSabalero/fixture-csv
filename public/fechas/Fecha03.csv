@@ -2,14 +2,14 @@ Partido,Fecha,ZonaL,Local,GolL,GolV,Visitante,ZonaV
 1,03,A,Estudiantes (BA),0,0,Quilmes,A
 2,03,A,Tristan Suarez,0,0,Patronato,A
 3,03,A,All Boys,0,0,Racing (C),A
-4,03,A,Agropecuario,0,0,Alvarado,A
+4,03,A,Agropecuario,3,0,Alvarado,A
 5,03,A,Brown (PM),0,0,Guemes (SdE),A
 6,03,A,San Martin (SJ),0,0,Gimnasia (J),A
 7,03,A,Arsenal,0,0,Dep. Maipu,A
 8,03,A,San Martin (T),0,0,Ferro,A
 9,03,A,Chacarita,0,0,San Miguel,A
 10,03,B,Colon,1,0,Alte Brown,B
-11,03,B,Estudiantes (RC),0,0,Atlanta,B
+11,03,B,Estudiantes (RC),0,1,Atlanta,B
 12,03,B,Aldosivi,0,0,Def. Unidos,B
 13,03,B,Mitre (SdE),0,0,Dep. Madryn,B
 14,03,B,Gimnasia (S),0,0,Atl Rafaela,B
