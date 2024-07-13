@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function CsvDisplay() {
+export default function FechasPage() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedFecha, setSelectedFecha] = useState("01");
@@ -63,7 +63,7 @@ export default function CsvDisplay() {
 
   return (
     <div>
-      <h1>CSV Data</h1>
+      <h1>FECHAS</h1>
       <label htmlFor="fecha-select">Seleccionar Fecha:</label>
       <select
         id="fecha-select"
@@ -120,7 +120,7 @@ export default function CsvDisplay() {
           ))}
         </tbody>
       </table>
-      <button onClick={handleSave}>ACTUALIZAR</button>
+      <button onClick={handleSave}>UPDATE</button>
     </div>
   );
 }

@@ -14,6 +14,11 @@ export async function GET(request) {
     );
   }
 
+  selectedZona = selectedZona.padStart(2, "0");
+  selectedFecha = selectedFecha.padStart(2, "0");
+
+
+
   const filePath = path.join(
     process.cwd(),
     "public",
