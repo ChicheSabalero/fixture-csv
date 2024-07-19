@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import style from "./fechas.module.css";
 
 export default function FechasPage() {
   const [data, setData] = useState([]);
@@ -52,7 +53,7 @@ export default function FechasPage() {
         console.log(`Error al guardar los datos: ${result.error}`);
       }
     } catch (error) {
-      console.error("Error saving data:", error);      
+      console.error("Error saving data:", error);
     }
   };
 
@@ -85,42 +86,50 @@ export default function FechasPage() {
   }
 
   return (
-    <div>
-      <h1>FECHAS</h1>
-      <label htmlFor="fecha-select">Seleccionar Fecha:</label>
+    <div className={style.div}>
+      <h1 className={style.h1}>FECHAS</h1>
+      <label className={style.label} htmlFor="fecha-select">
+        {/* Seleccionar: */}
+      </label>
       <select
+        className={style.select}
         id="fecha-select"
         value={selectedFecha}
         onChange={handleFechaChange}
       >
         {[...Array(38).keys()].map((i) => (
-          <option key={i} value={String(i + 1).padStart(2, "0")}>
+          <option
+            className={style.option}
+            key={i}
+            value={String(i + 1).padStart(2, "0")}
+          >
             {`Fecha ${i + 1}`}
           </option>
         ))}
       </select>
-      <table>
-        <thead>
-          <tr>
-            <th>Partido</th>
-            <th>Fecha</th>
-            <th>ZonaL</th>
-            <th>Local</th>
-            <th>GolL</th>
-            <th>GolV</th>
-            <th>Visitante</th>
-            <th>ZonaV</th>
+      <table className={style.table}>
+        <thead className={style.thead}>
+          <tr className={style.tr}>
+            <th className={style.th}>Partido</th>
+            <th className={style.th}>Fecha</th>
+            <th className={style.th}>Zona</th>
+            <th className={style.th}>Local</th>
+            <th className={style.th}></th>
+            <th className={style.th}></th>
+            <th className={style.th}>Visitante</th>
+            <th className={style.th}>Zona</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={style.tbody}>
           {data.map((match, index) => (
-            <tr key={index}>
-              <td>{match.Partido}</td>
-              <td>{match.Fecha}</td>
-              <td>{match.ZonaL}</td>
-              <td>{match.Local}</td>
-              <td>
+            <tr className={style.tr} key={index}>
+              <td className={style.td}>{match.Partido}</td>
+              <td className={style.td}>{match.Fecha}</td>
+              <td className={style.td}>{match.ZonaL}</td>
+              <td className={style.td}>{match.Local}</td>
+              <td className={style.td}>
                 <input
+                  className={style.input}
                   type="number"
                   value={match.GolL}
                   onChange={(e) =>
@@ -128,8 +137,9 @@ export default function FechasPage() {
                   }
                 />
               </td>
-              <td>
+              <td className={style.td}>
                 <input
+                  className={style.input}
                   type="number"
                   value={match.GolV}
                   onChange={(e) =>
@@ -137,13 +147,15 @@ export default function FechasPage() {
                   }
                 />
               </td>
-              <td>{match.Visitante}</td>
-              <td>{match.ZonaV}</td>
+              <td className={style.td}>{match.Visitante}</td>
+              <td className={style.td}>{match.ZonaV}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button onClick={handleSave}>UPDATE</button>
+      <button className={style.button} onClick={handleSave}>
+        UPDATE
+      </button>
     </div>
   );
 }

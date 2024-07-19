@@ -1,9 +1,9 @@
 Partido,Fecha,ZonaL,Local,GolL,GolV,Visitante,ZonaV
 1,30,A,Gimnasia (J),0,0,Guemes (SdE),A
-2,30,A,Dep. Maipu,0,0,Alvarado,A
+2,30,A,Dep Maipú,0,0,Alvarado MdP,A
 3,30,A,Ferro,0,0,Racing (C),A
 4,30,A,San Miguel,0,0,Patronato,A
-5,30,A,Quilmes,0,0,Tristan Suarez,A
+5,30,A,Quilmes,0,0,Tristán Suárez,A
 6,30,A,Talleres (RdE),0,0,All Boys,A
 7,30,A,Estudiantes (BA),0,0,Agropecuario,A
 8,30,A,Chacarita,0,0,Brown (PM),A
@@ -12,9 +12,9 @@ Partido,Fecha,ZonaL,Local,GolL,GolV,Visitante,ZonaV
 11,30,B,Mitre (SdE),0,0,Gimnasia (S),B
 12,30,B,Aldosivi,0,0,Gimnasia (M),B
 13,30,B,Estudiantes (RC),0,0,Nueva Chicago,B
-14,30,B,Colon,0,0,Dep. Moron,B
+14,30,B,Colón,0,0,Dep Morón,B
 15,30,B,Alte Brown,0,0,Temperley,B
 16,30,B,Atlanta,0,0,Brown (A),B
-17,30,B,Def. Unidos,0,0,Almagro,B
-18,30,B,Dep. Madryn,0,0,Def. de Belgrano,B
+17,30,B,Def Unidos,0,0,Almagro,B
+18,30,B,Dep Madryn,0,0,Def Belgrano,B
 19,30,B,San Telmo,0,0,Arsenal,A

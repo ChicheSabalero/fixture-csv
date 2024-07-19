@@ -16,8 +16,6 @@ export async function GET(request) {
 
   selectedFecha = selectedFecha.padStart(2, "0");
 
-
-
   const filePath = path.join(
     process.cwd(),
     "public",
@@ -25,13 +23,12 @@ export async function GET(request) {
     `Clubes${selectedFecha}.csv`
   );
 
-  
   try {
-    const fileContents = fs.readFileSync(filePath, "utf8");    
-    const data = parseCSV( fileContents ).filter(
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const data = parseCSV(fileContents).filter(
       (club) => club.Zona === selectedZona
-    );    
-    return NextResponse.json( data );
+    );
+    return NextResponse.json(data);
   } catch (error) {
     console.error("Error reading CSV:", error);
     return NextResponse.json(

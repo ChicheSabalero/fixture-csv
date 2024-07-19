@@ -1,0 +1,99 @@
+/* src/app/Fechas/fechas.module.css */
+
+.div {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.h1 {
+  color: var(--shadow-color);
+  padding: 10px;
+
+  text-align: center;
+}
+
+.label {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.select {
+  font-family: var(--font-family);
+  color: var(--shadow-color);
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 30px;
+  width: 300px;
+}
+
+.option {
+  background-color: none;
+  color: var(--shadow-color);
+  max-width: 60px;
+}
+
+.table {
+  justify-content: center;
+  /* margin: 80px; */
+  text-align: center;
+  padding: 50px;
+  max-width: 800px;
+  color: var(--shadow-color);
+  font-weight: 900;
+  background-color: #000000bf;
+  text-shadow: var(--primary-color) 5px 5px 5px;
+  box-shadow: 0 0 30px var(--shadow-color);
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.thead {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.tr {
+  font-size: large;
+}
+
+.th {
+  margin-bottom: 8px;
+}
+
+.tbody {
+}
+
+.td {
+  padding: 3px;
+}
+
+.input {
+  width: 35px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: var(--shadow-color);
+  font-family: var(--font-family);
+  font-weight: bolder;
+}
+
+.button {
+  color: var(--shadow-color);
+  background-color: #000000bf;
+  font-size: x-large;
+  font-weight: bolder;
+  border: none;
+  justify-content: center;
+  font-family: var(--font-family);
+  margin: 80px;
+  padding: 15px;
+  cursor: pointer;
+}
